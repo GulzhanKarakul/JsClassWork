@@ -1,0 +1,28 @@
+<script>
+//bubble sort
+
+let currentInput = prompt("Введите значения через запятую");
+let currentArray = currentInput.split(",");
+currentArray = currentArray.map(Number);
+
+let resultArray = bubbleSort(currentArray);
+document.write(resultArray.join(" "));
+
+function bubbleSort(array){
+    let sorted;
+    
+	do{
+	sorted = true;
+        for(let i = 1; i < array.length; i++){
+	        if(array[i] < array[i - 1]){
+		        let tmp = array[i - 1];
+			    array[i - 1] = array[i];
+			    array[i] = tmp;
+			    sorted = false;
+		    }
+        }
+	}
+	while(!sorted)
+    return array;
+}
+</script>

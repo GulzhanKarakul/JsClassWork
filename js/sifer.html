@@ -1,0 +1,26 @@
+<script>
+let stringWord = prompt("Введите кодовое послание");
+<!-- let stringWordArray = stringWord.split(""); -->
+
+
+let alphabet = ["А","Б","В","Г","Д","Е","Ё","Ж","З","И","Й","К","Л","М","Н","О","П","Р","С","Т","У","Ф","Х","Ц","Ч","Ш","Щ","Ъ","Ы","Ь","Э","Ю","Я"] ;
+
+let ciferWords;
+let ciferLetter;
+for(let x of stringWord){
+    ciferLetter = encrypt(x, alphabet);
+   ciferWords += ciferLetter;
+
+}
+
+document.write(ciferLetter + "<br>" + ciferWords);
+function encrypt(elem, arr){
+    for(let i in arr){
+	    if(elem === arr[i]){
+		    elem = arr[i + 1];
+		}
+		return elem;
+	}
+
+}
+</script>
